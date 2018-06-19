@@ -33,4 +33,12 @@ export default class Creature {
   private setHealth(health: number) {
     this.health = health;
   }
+
+  public getHealth(): number {
+    return this.health;
+  }
+
+  public getAttack(): number {
+    return this.actualAttack;
+  }
 }
