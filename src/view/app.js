@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {
   Container,
+  Button,
   Card,
   CardBody,
   CardTitle,
@@ -27,6 +28,7 @@ export default class App extends Component {
             <CardText>Attack: {this.player.getAttack()}</CardText>
           </CardBody>
         </Card>
+        <Button>Travel</Button>
       </Container>
     );
   }

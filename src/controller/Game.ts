@@ -1,4 +1,5 @@
 import Player from "../model/Player";
+import Enemy from "../model/Enemy";
 
 let instance: Game = null;
 
