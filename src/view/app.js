@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { Container, Card, CardBody, CardTitle, CardText } from "reactstrap";
+import {
+  Container,
+  Card,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  CardText
+} from "reactstrap";
 import Game from "../controller/Game";
 
 export default class App extends Component {
@@ -12,11 +19,12 @@ export default class App extends Component {
   render() {
     return (
       <Container>
-        <Card>
+        <Card className="mx-auto">
           <CardBody>
             <CardTitle>Player</CardTitle>
-            <CardText>Life: {this.game.player.getHealth()}</CardText>
-            <CardText>Attack: {this.game.player.getAttack()}</CardText>
+            <CardSubtitle>Level: {this.player.getLevel()}</CardSubtitle>
+            <CardText>Life: {this.player.getHealth()}</CardText>
+            <CardText>Attack: {this.player.getAttack()}</CardText>
           </CardBody>
         </Card>
       </Container>

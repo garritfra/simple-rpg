@@ -3,11 +3,12 @@ export default class Creature {
   private baseAttack: number;
   private actualAttack: number;
   private alive: boolean;
+  private level: number;
 
-  constructor(health: number, baseAttack: number) {
+  constructor(health: number, baseAttack: number, level: number = 1) {
     this.health = health;
     this.baseAttack = baseAttack;
-    this.actualAttack = baseAttack;
+    this.level = level;
   }
 
   public log() {
@@ -40,5 +41,9 @@ export default class Creature {
 
   public getAttack(): number {
     return this.actualAttack;
+  }
+
+  public getLevel(): number {
+    return this.level;
   }
 }
