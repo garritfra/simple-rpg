@@ -11,8 +11,9 @@ export default class Player extends Creature {
     this.currentTurn = new Turn();
   }
 
-  public travel() {
+  public takeTurn() {
     this.currentTurn = new Turn();
+    console.log(this.currentTurn);
   }
 
   public getAttack(): number {

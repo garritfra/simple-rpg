@@ -17,6 +17,10 @@ export default class App extends Component {
     this.game = Game.getInstance();
     this.player = this.game.player;
   }
+
+  handleTravel() {
+    this.player.takeTurn();
+  }
   render() {
     return (
       <Container>
@@ -28,7 +32,7 @@ export default class App extends Component {
             <CardText>Attack: {this.player.getAttack()}</CardText>
           </CardBody>
         </Card>
-        <Button>Travel</Button>
+        <Button onClick={this.handleTravel.bind(this)}>Travel</Button>
       </Container>
     );
   }
