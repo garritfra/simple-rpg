@@ -5,7 +5,7 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
   template: "./public/index.html"
 });
 module.exports = {
-  entry: __dirname + "/src/index.ts",
+  entry: __dirname + "/src/index.js",
   output: {
     path: path.join(__dirname, "docs"),
     filename: "bundle.js"
