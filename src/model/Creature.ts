@@ -1,11 +1,18 @@
 export default class Creature {
   private health: number;
-  private baseAttack: number;
+  baseAttack: number;
   private actualAttack: number;
   private alive: boolean;
   private level: number;
+  private name: string;
 
-  constructor(health: number, baseAttack: number, level: number = 1) {
+  constructor(
+    name: string,
+    health: number,
+    baseAttack: number,
+    level: number = 1
+  ) {
+    this.name = name;
     this.health = health;
     this.baseAttack = baseAttack;
     this.level = level;
@@ -31,19 +38,15 @@ export default class Creature {
     return this.alive;
   }
 
-  private setHealth(health: number) {
-    this.health = health;
-  }
-
   public getHealth(): number {
     return this.health;
   }
 
-  public getAttack(): number {
-    return this.actualAttack;
-  }
-
   public getLevel(): number {
     return this.level;
+  }
+
+  public getName(): string {
+    return this.name;
   }
 }

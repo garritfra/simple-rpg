@@ -21,7 +21,7 @@ export default class App extends Component {
       <Container>
         <Card className="mx-auto">
           <CardBody>
-            <CardTitle>Player</CardTitle>
+            <CardTitle>{this.player.getName()}</CardTitle>
             <CardSubtitle>Level: {this.player.getLevel()}</CardSubtitle>
             <CardText>Life: {this.player.getHealth()}</CardText>
             <CardText>Attack: {this.player.getAttack()}</CardText>
