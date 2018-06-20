@@ -8,12 +8,6 @@ export default class Player extends Creature {
   constructor() {
     super("Player", 100, 1);
     this.inventory = [new Item("Stick", 1)];
-    this.currentTurn = new Turn();
-  }
-
-  public takeTurn() {
-    this.currentTurn = new Turn();
-    console.log(this.currentTurn);
   }
 
   public getAttack(): number {

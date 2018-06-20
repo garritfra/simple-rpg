@@ -15,6 +15,7 @@ export default class Creature {
     this.name = name;
     this.health = health;
     this.baseAttack = baseAttack;
+    this.actualAttack = baseAttack;
     this.level = level;
   }
 
@@ -48,5 +49,8 @@ export default class Creature {
 
   public getName(): string {
     return this.name;
+  }
+  public getAttack() {
+    return this.actualAttack;
   }
 }
