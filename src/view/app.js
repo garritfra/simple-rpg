@@ -14,25 +14,29 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.props = props;
-    this.game = Game.getInstance();
-    this.player = this.game.player;
-    this.enemy = this.game.currentTurn.getEnemy();
+    this.state = {
+      game: Game.getInstance(),
+      player: Game.getInstance().player,
+      enemy: Game.getInstance().currentTurn.getEnemy(),
+      currentTurn: Game.getInstance().currentTurn
+    };
   }
 
   handleTravel() {
-    this.game.takeTurn();
+    this.state.game.takeTurn();
+    this.forceUpdate();
   }
   render() {
     return (
       <Container>
         <Card className="mx-auto">
           <CardBody>
-            <CardTitle>{this.player.getName()}</CardTitle>
-            <CardSubtitle>Level: {this.player.getLevel()}</CardSubtitle>
+            <CardTitle>{this.state.player.getName()}</CardTitle>
+            <CardSubtitle>Level: {this.state.player.getLevel()}</CardSubtitle>
             <CardText>
-              Life: {this.player.getHealth()}
+              Life: {this.state.player.getHealth()}
               <br />
-              Attack: {this.player.getAttack()}
+              Attack: {this.state.player.getAttack()}
             </CardText>
             <CardText />
             <Button onClick={this.handleTravel.bind(this)}>Travel</Button>
@@ -41,12 +45,12 @@ export default class App extends Component {
 
         <Card>
           <CardBody>
-            <CardTitle>{this.game.currentTurn.getEnemy().getName()}</CardTitle>
-            <CardSubtitle>Level: {this.enemy.getLevel()}</CardSubtitle>
+            <CardTitle>{this.state.currentTurn.getEnemy().getName()}</CardTitle>
+            <CardSubtitle>Level: {this.state.enemy.getLevel()}</CardSubtitle>
             <CardText>
-              Life: {this.enemy.getHealth()}
+              Life: {this.state.enemy.getHealth()}
               <br />
-              Attack: {this.enemy.getAttack()}
+              Attack: {this.state.enemy.getAttack()}
             </CardText>
           </CardBody>
         </Card>
