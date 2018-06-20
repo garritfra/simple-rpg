@@ -26,6 +26,11 @@ export default class App extends Component {
     this.state.game.takeTurn();
     this.forceUpdate();
   }
+
+  handleAttack() {
+    this.state.player.fight(this.state.enemy);
+    this.forceUpdate();
+  }
   render() {
     return (
       <Container>
@@ -52,6 +57,9 @@ export default class App extends Component {
               <br />
               Attack: {this.state.enemy.getAttack()}
             </CardText>
+            <Button color="danger" onClick={this.handleAttack.bind(this)}>
+              Attack
+            </Button>
           </CardBody>
         </Card>
       </Container>

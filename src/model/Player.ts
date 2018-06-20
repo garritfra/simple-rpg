@@ -15,4 +15,9 @@ export default class Player extends Creature {
     this.inventory.forEach(item => (attack += item.attack));
     return attack;
   }
+
+  fight(creature: Creature) {
+    this.attack(creature);
+    creature.attack(this);
+  }
 }

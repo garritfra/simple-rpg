@@ -25,7 +25,7 @@ export default class Creature {
   }
 
   public attack(creature: Creature) {
-    creature.applyDamage(this.actualAttack);
+    creature.applyDamage(this.getAttack());
   }
 
   private applyDamage(damage: number) {
@@ -50,7 +50,8 @@ export default class Creature {
   public getName(): string {
     return this.name;
   }
-  public getAttack() {
+
+  public getAttack(): number {
     return this.actualAttack;
   }
 }
