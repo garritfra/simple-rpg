@@ -30,9 +30,9 @@ export default class App extends Component {
             <CardSubtitle>Level: {this.player.getLevel()}</CardSubtitle>
             <CardText>Life: {this.player.getHealth()}</CardText>
             <CardText>Attack: {this.player.getAttack()}</CardText>
+            <Button onClick={this.handleTravel.bind(this)}>Travel</Button>
           </CardBody>
         </Card>
-        <Button onClick={this.handleTravel.bind(this)}>Travel</Button>
       </Container>
     );
   }
