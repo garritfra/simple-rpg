@@ -6,15 +6,18 @@ export default class Creature {
   private level: number;
   private name: string;
   avatar: string;
+  maxHealth: number;
 
   constructor(
     name: string,
     health: number,
+    maxHealth: number,
     baseAttack: number,
     level: number = 1
   ) {
     this.name = name;
     this.health = health;
+    this.maxHealth = this.health;
     this.baseAttack = baseAttack;
     this.actualAttack = baseAttack;
     this.level = level;
@@ -55,5 +58,16 @@ export default class Creature {
 
   public getAttack(): number {
     return this.actualAttack;
+  }
+
+  public heal(amount?: number) {
+    if (!amount) {
+      this.health = this.maxHealth;
+    } else {
+      this.health += amount;
+    }
+    if (this.health > this.maxHealth) {
+      this.health = this.maxHealth;
+    }
   }
 }
