@@ -47,5 +47,15 @@ const enemyNames: Array<string> = [
   "The Grim Lich",
   "The Arctic Vampire Cobra",
   "The Matriarch Storm Scorpion",
-  "The Savage Raptor Leopard"
+  "The Savage Raptor Leopard",
+  "Netherscreamer",
+  "Spitefiend",
+  "Poisoncrackle",
+  "Horrorscreamer",
+  "The Insidious Child",
+  "The Electric Hag",
+  "The Insidious Hybrid",
+  "The Giant Bane Gorilla",
+  "The Blood-Eyed Slayer Tiger",
+  "The Ebon Phantom Frog"
 ];
