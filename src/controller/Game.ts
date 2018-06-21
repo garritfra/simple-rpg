@@ -1,14 +1,13 @@
 import Player from "../model/Player";
-import Enemy from "../model/Enemy";
 import Turn from "../model/Turn";
 
-let instance: Game = null;
+let instance: Game;
 
 export default class Game {
-  player: Player;
-  currentTurn: Turn;
+  private player: Player;
+  private currentTurn: Turn;
 
-  constructor() {
+  private constructor() {
     this.player = new Player();
     this.currentTurn = new Turn();
   }
@@ -20,7 +19,15 @@ export default class Game {
     return instance;
   }
 
-  public takeTurn() {
+  public takeTurn(): void {
     this.currentTurn = new Turn();
+  }
+
+  public getPlayer(): Player {
+    return this.player;
+  }
+
+  public getCurrentTurn() {
+    return this.currentTurn;
   }
 }

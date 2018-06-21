@@ -5,6 +5,7 @@ export default class Creature {
   private alive: boolean;
   private level: number;
   private name: string;
+  avatar: string;
 
   constructor(
     name: string,
@@ -17,6 +18,7 @@ export default class Creature {
     this.baseAttack = baseAttack;
     this.actualAttack = baseAttack;
     this.level = level;
+    this.avatar = `https://api.adorable.io/avatars/500/${this.name}.png`;
   }
 
   public log() {
