@@ -13,4 +13,13 @@ describe("Game", () => {
       expect(game1).toBe(game2);
     });
   });
+  describe("takeTurn", () => {
+    it("takes a turn", () => {
+      const game = Game.getInstance();
+      const currentTurn = game.getCurrentTurn();
+      game.takeTurn();
+      const nextTurn = game.getCurrentTurn();
+      expect(nextTurn).not.toBe(currentTurn);
+    });
+  });
 });
