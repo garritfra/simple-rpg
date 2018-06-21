@@ -1,4 +1,6 @@
 import Game from "../../src/controller/Game";
+import Player from "../../src/model/Player";
+import Turn from "../../src/model/Turn";
 
 describe("Game", () => {
   describe("getInstance", () => {
@@ -20,6 +22,16 @@ describe("Game", () => {
       game.takeTurn();
       const nextTurn = game.getCurrentTurn();
       expect(nextTurn).not.toBe(currentTurn);
+    });
+  });
+  describe("getPlayer", () => {
+    it("has a player", () => {
+      expect(Game.getInstance().getPlayer()).toBeInstanceOf(Player);
+    });
+  });
+  describe("getCurrentTurn", () => {
+    it("has a turn", () => {
+      expect(Game.getInstance().getCurrentTurn()).toBeInstanceOf(Turn);
     });
   });
 });
