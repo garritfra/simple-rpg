@@ -11,7 +11,6 @@ export default class Creature {
   constructor(
     name: string,
     health: number,
-    maxHealth: number,
     baseAttack: number,
     level: number = 1
   ) {
