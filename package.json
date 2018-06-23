@@ -7,8 +7,7 @@
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
     "deploy": "npm run build && gh-pages -d /docs",
-    "test": "jest",
-    "posttest": "codecov -f coverage/*.json -t c1a6d2c2-0c89-41fd-ac94-662f02a10164"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -25,6 +24,7 @@
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "coveralls": "^3.0.1",
     "css-loader": "^0.28.11",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.9.0",
