@@ -12,16 +12,7 @@ import {
   Row
 } from "reactstrap";
 import Game from "../controller/Game";
-import Player from "../model/Player";
-import Turn from "../model/Turn";
-import Enemy from "../model/Enemy";
-
-export interface IGameState {
-  game: Game;
-  player: Player;
-  enemy: Enemy;
-  currentTurn: Turn;
-}
+import { IGameState } from "./interfaces/IGameState";
 
 export default class App extends React.Component<any, IGameState> {
   constructor(props: any) {
