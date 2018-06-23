@@ -12,7 +12,7 @@ export default class Creature {
     name: string,
     health: number,
     baseAttack: number,
-    level: number = 1
+    level: number = 0
   ) {
     this.name = name;
     this.health = health;

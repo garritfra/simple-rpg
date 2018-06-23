@@ -2,12 +2,12 @@ import Creature from "./Creature";
 import Item from "./Item";
 import Turn from "./Turn";
 export default class Player extends Creature {
-  inventory: Item[];
+  private inventory: Item[];
   currentTurn: Turn;
 
   constructor(name = "Player", health = 100, baseAttack = 1) {
     super(name, health, baseAttack);
-    this.inventory = [new Item("Stick", 1)];
+    this.inventory = [];
   }
 
   public getAttack(): number {
@@ -18,6 +18,10 @@ export default class Player extends Creature {
 
   public getInventory(): Array<Item> {
     return this.inventory;
+  }
+
+  public addItem(item: Item): Item {
+    this.inventory.push(item);
   }
 
   fight(creature: Creature) {
