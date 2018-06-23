@@ -1,12 +1,12 @@
 export default class Creature {
   private health: number;
-  baseAttack: number;
+  protected baseAttack: number;
   private actualAttack: number;
   private alive: boolean;
   private level: number;
   private name: string;
-  avatar: string;
-  maxHealth: number;
+  private avatar: string;
+  private maxHealth: number;
 
   constructor(
     name: string,

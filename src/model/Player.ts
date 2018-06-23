@@ -5,8 +5,8 @@ export default class Player extends Creature {
   inventory: Item[];
   currentTurn: Turn;
 
-  constructor() {
-    super("Player", 100, 1);
+  constructor(name = "Player", health = 100, baseAttack = 1) {
+    super(name, health, baseAttack);
     this.inventory = [new Item("Stick", 1)];
   }
 
@@ -14,6 +14,10 @@ export default class Player extends Creature {
     let attack = this.baseAttack;
     this.inventory.forEach(item => (attack += item.attack));
     return attack;
+  }
+
+  public getInventory(): Array<Item> {
+    return this.inventory;
   }
 
   fight(creature: Creature) {
