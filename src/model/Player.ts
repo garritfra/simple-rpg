@@ -20,8 +20,9 @@ export default class Player extends Creature {
     return this.inventory;
   }
 
-  public addItem(item: Item): Item {
+  public addItemToInventory(item: Item): Item {
     this.inventory.push(item);
+    return item;
   }
 
   fight(creature: Creature) {

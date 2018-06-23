@@ -27,9 +27,26 @@ describe("Player", () => {
       const player = new Player("Ragnar", 100, 5);
       expect(player.getAttack()).toBe(5);
       const item = new Item("Sword", 5);
-      player.addItem(item);
+      player.addItemToInventory(item);
       expect(player.getInventory()).toContain(item);
       expect(player.getAttack()).toBe(10);
+    });
+  });
+
+  describe("getInventory", () => {
+    it("returns the empty inventory", () => {
+      const player = new Player();
+      expect(player.getInventory().length).toBe(0);
+    });
+
+    it("gets an item that has been added to be tínventory", () => {
+      const player = new Player();
+      expect(player.getInventory().length).toBe(0);
+      const item = new Item("Thors Hammer", 200);
+      player.addItemToInventory(item);
+
+      expect(player.getInventory()).toContain(item);
+      expect(player.getInventory().length).toBe(1);
     });
   });
 });
