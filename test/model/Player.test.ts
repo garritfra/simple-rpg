@@ -1,5 +1,6 @@
 import Player from "../../src/model/Player";
 import Item from "../../src/model/Item";
+import Enemy from "../../src/model/Enemy";
 
 describe("Player", () => {
   describe("constructor", () => {
@@ -47,6 +48,18 @@ describe("Player", () => {
 
       expect(player.getInventory()).toContain(item);
       expect(player.getInventory().length).toBe(1);
+    });
+  });
+
+  describe("fight", () => {
+    it("fights a creature", () => {
+      const player = new Player("Thor", 100, 1);
+      const enemy = new Enemy("Loki", 100, 2, 1);
+      expect(player.getHealth()).toBe(100);
+      expect(enemy.getHealth()).toBe(100);
+      player.fight(enemy);
+      expect(player.getHealth()).toBe(98);
+      expect(enemy.getHealth()).toBe(99);
     });
   });
 });
