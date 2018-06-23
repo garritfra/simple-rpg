@@ -33,13 +33,13 @@ describe("Player", () => {
     });
   });
 
-  describe("getInventory", () => {
+  describe("inventory", () => {
     it("returns the empty inventory", () => {
       const player = new Player();
       expect(player.getInventory().length).toBe(0);
     });
 
-    it("gets an item that has been added to be tínventory", () => {
+    it("adds an item to the inventory", () => {
       const player = new Player();
       expect(player.getInventory().length).toBe(0);
       const item = new Item("Thors Hammer", 200);
