@@ -51,6 +51,10 @@ export default class Creature {
     return this.level;
   }
 
+  public setLevel(level: number): void {
+    this.level = level;
+  }
+
   public getName(): string {
     return this.name;
   }

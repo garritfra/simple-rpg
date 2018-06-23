@@ -2,7 +2,11 @@ import Enemy from "../model/Enemy";
 import Game from "./Game";
 
 export default class CreatureGenerator {
-  game: Game;
+  private game: Game;
+
+  constructor(game?: Game) {
+    if (game) this.game = game;
+  }
 
   public generateEnemy(): Enemy {
     const level: number = this.generateLevel();
