@@ -63,3 +63,4 @@ package-lock.json
 .cache
 dist
 docs
+.DS_Store
