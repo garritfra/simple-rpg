@@ -64,6 +64,10 @@ export default class Creature {
     return this.actualAttack;
   }
 
+  public getAvatar(): string {
+    return this.avatar;
+  }
+
   public heal(amount?: number) {
     if (!amount) {
       this.health = this.maxHealth;

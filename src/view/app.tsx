@@ -16,14 +16,14 @@ import Player from "../model/Player";
 import Turn from "../model/Turn";
 import Enemy from "../model/Enemy";
 
-export interface GameProps {
+export interface IGameState {
   game: Game;
   player: Player;
   enemy: Enemy;
   currentTurn: Turn;
 }
 
-export default class App extends React.Component<any, any> {
+export default class App extends React.Component<any, IGameState> {
   constructor(props: any) {
     super(props);
     this.props = props;
@@ -53,7 +53,7 @@ export default class App extends React.Component<any, any> {
           <Col>
             <Card className="mx-auto">
               <CardBody>
-                <CardImg src={this.state.player.avatar} top width="100%" />
+                <CardImg src={this.state.player.getAvatar()} top width="100%" />
                 <CardTitle>{this.state.player.getName()}</CardTitle>
                 <CardSubtitle>
                   Level: {this.state.player.getLevel()}
@@ -71,7 +71,7 @@ export default class App extends React.Component<any, any> {
           <Col>
             <Card>
               <CardBody>
-                <CardImg src={this.state.enemy.avatar} top width="100%" />
+                <CardImg src={this.state.enemy.getAvatar()} top width="100%" />
                 <CardTitle>
                   {this.state.currentTurn.getEnemy().getName()}
                 </CardTitle>
