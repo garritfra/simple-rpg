@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import * as React from "react";
 import {
   Container,
   Button,
@@ -12,9 +12,19 @@ import {
   Row
 } from "reactstrap";
 import Game from "../controller/Game";
+import Player from "../model/Player";
+import Turn from "../model/Turn";
+import Enemy from "../model/Enemy";
 
-export default class App extends Component {
-  constructor(props) {
+export interface GameProps {
+  game: Game;
+  player: Player;
+  enemy: Enemy;
+  currentTurn: Turn;
+}
+
+export default class App extends React.Component<any, any> {
+  constructor(props: any) {
     super(props);
     this.props = props;
     this.state = {
