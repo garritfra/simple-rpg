@@ -8,6 +8,10 @@ install:
   - npm install
 scripts:
   - npm test
+  - npm install codecov -g
+  - jest --coverage && cat ./coverage/lcov.info
+after_success:
+  - codecov
 
 jobs:
 include:
