@@ -1,6 +1,7 @@
 import Player from "../../src/model/Player";
 import Item from "../../src/model/Item";
 import Enemy from "../../src/model/Enemy";
+import Creature from "../../src/model/Creature";
 
 describe("Player", () => {
   describe("constructor", () => {
@@ -60,6 +61,64 @@ describe("Player", () => {
       player.fight(enemy);
       expect(player.getHealth()).toBe(98);
       expect(enemy.getHealth()).toBe(99);
+    });
+
+    it("fights a creature and IT dies", () => {
+      const player = new Player("Thor", 1, 1);
+      const enemy = new Enemy("Loki", 1, 0, 1);
+
+      expect(player.getHealth()).toBe(1);
+      expect(enemy.getHealth()).toBe(1);
+
+      expect(player.isAlive()).toBeTruthy();
+      expect(enemy.isAlive()).toBeTruthy();
+
+      player.fight(enemy);
+
+      expect(player.isAlive()).toBeTruthy();
+      expect(enemy.isAlive()).toBeFalsy();
+    });
+  });
+
+  describe("log", () => {
+    it("logs the stats of a creature", () => {
+      const player: Creature = new Player();
+      player.log();
+    });
+  });
+
+  describe("Heal", () => {
+    it("heals fully", () => {
+      const player = new Player("Thor", 10, 1);
+      expect(player.getHealth()).toBe(10);
+
+      player.fight(new Enemy("Loki", 10, 5, 0));
+      expect(player.getHealth()).toBe(5);
+
+      player.heal();
+      expect(player.getHealth()).toBe(10);
+    });
+
+    it("heals more than full health", () => {
+      const player = new Player("Thor", 10, 1);
+      expect(player.getHealth()).toBe(10);
+
+      player.fight(new Enemy("Loki", 10, 5, 0));
+      expect(player.getHealth()).toBe(5);
+
+      player.heal(10);
+      expect(player.getHealth()).toBe(10);
+    });
+
+    it("heals partially", () => {
+      const player = new Player("Thor", 10, 1);
+      expect(player.getHealth()).toBe(10);
+
+      player.fight(new Enemy("Loki", 10, 5, 0));
+      expect(player.getHealth()).toBe(5);
+
+      player.heal(1);
+      expect(player.getHealth()).toBe(6);
     });
   });
 });

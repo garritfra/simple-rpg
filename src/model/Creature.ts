@@ -2,7 +2,7 @@ export default class Creature {
   private health: number;
   protected baseAttack: number;
   private actualAttack: number;
-  private alive: boolean;
+  protected alive: boolean;
   private level: number;
   private name: string;
   private avatar: string;
@@ -21,6 +21,7 @@ export default class Creature {
     this.actualAttack = baseAttack;
     this.level = level;
     this.avatar = `https://api.adorable.io/avatars/500/${this.name}.png`;
+    this.alive = true;
   }
 
   public log() {
