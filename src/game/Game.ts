@@ -1,5 +1,5 @@
-import Player from "../model/Player";
-import Turn from "../model/Turn";
+import Player from "./model/Player";
+import Turn from "./model/Turn";
 
 let instance: Game;
 

@@ -1,6 +1,6 @@
-import Game from "../../src/controller/Game";
-import Player from "../../src/model/Player";
-import Turn from "../../src/model/Turn";
+import Game from "../../Game";
+import Player from "../../model/Player";
+import Turn from "../../model/Turn";
 
 describe("Game", () => {
   describe("getInstance", () => {

@@ -1,7 +1,7 @@
-import Game from "../../controller/Game";
-import Player from "../../model/Player";
-import Enemy from "../../model/Enemy";
-import Turn from "../../model/Turn";
+import Game from "../../game/Game";
+import Player from "../../game/model/Player";
+import Enemy from "../../game/model/Enemy";
+import Turn from "../../game/model/Turn";
 
 export interface IGameState {
   game: Game;

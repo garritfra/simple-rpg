@@ -1,7 +1,7 @@
-import Player from "../../src/model/Player";
-import Item from "../../src/model/Item";
-import Enemy from "../../src/model/Enemy";
-import Creature from "../../src/model/Creature";
+import Player from "../../model/Player";
+import Item from "../../model/Item";
+import Enemy from "../../model/Enemy";
+import Creature from "../../model/Creature";
 
 describe("Player", () => {
   describe("constructor", () => {

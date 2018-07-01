@@ -11,13 +11,13 @@ import {
   Col,
   Row
 } from "reactstrap";
-import Game from "../controller/Game";
+import Game from "../game/Game";
 import { IGameState } from "./interfaces/IGameState";
 
 export default class App extends React.Component<any, IGameState> {
   constructor(props: any) {
     super(props);
-    this.props = props;
+    console.log(this.props);
     this.state = {
       game: Game.getInstance(),
       player: Game.getInstance().getPlayer(),

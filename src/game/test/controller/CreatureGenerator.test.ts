@@ -1,6 +1,6 @@
-import Game from "../../src/controller/Game";
-import CreatureGenerator from "../../src/controller/CreatureGenerator";
-import Enemy from "../../src/model/Enemy";
+import Game from "../../Game";
+import CreatureGenerator from "../../controller/CreatureGenerator";
+import Enemy from "../../model/Enemy";
 
 describe("CreatureGenerator", () => {
   describe("constructor", () => {

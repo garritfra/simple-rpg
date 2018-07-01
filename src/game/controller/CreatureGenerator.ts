@@ -1,5 +1,5 @@
 import Enemy from "../model/Enemy";
-import Game from "./Game";
+import Game from "../Game";
 
 export default class CreatureGenerator {
   private game: Game;

@@ -1,7 +1,8 @@
 import Creature from "./Creature";
 import Item from "./Item";
 import Turn from "./Turn";
-export default class Player extends Creature {
+import IPlayable from "./interfaces/IPlayable";
+export default class Player extends Creature implements IPlayable {
   private inventory: Item[];
   currentTurn: Turn;
 
