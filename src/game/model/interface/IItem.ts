@@ -1,4 +1,6 @@
 export default interface IItem {
-  name: string;
-  strength: number;
+  getName(): string;
+  getStrength(): number;
+  setId(id: number): void;
+  getId(): number;
 }
