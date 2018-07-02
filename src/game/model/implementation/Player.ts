@@ -12,9 +12,9 @@ export default class Player extends Creature implements IPlayer {
     this.inventory = new Inventory();
   }
   getAvatar(): string {
-    throw new Error("Method not implemented.");
+    return this.avatar;
   }
   getInventory(): Inventory {
-    throw new Error("Method not implemented.");
+    return this.inventory;
   }
 }

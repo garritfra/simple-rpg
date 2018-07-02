@@ -12,7 +12,6 @@ export default class Game {
     if (instance == null) {
       instance = new Game();
     }
-    console.log(instance);
     return instance;
   }
 
