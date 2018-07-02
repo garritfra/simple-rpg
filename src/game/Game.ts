@@ -16,6 +16,10 @@ export default class Game {
         .getPlayer()
         .getInventory()
         .addItem(new Item("Sword", 10));
+      instance
+        .getPlayer()
+        .getInventory()
+        .addItem(new Item("Stick", 10));
     }
     return instance;
   }
