@@ -22,4 +22,11 @@ export default class Inventory implements IInventory {
   getAllItems(): Item[] {
     return this.inventory;
   }
+
+  getFirst(): Item {
+    return this.inventory[0];
+  }
+  getLast(): Item {
+    return this.inventory[this.inventory.length - 1];
+  }
 }

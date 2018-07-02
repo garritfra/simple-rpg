@@ -4,4 +4,6 @@ export default interface IInventory {
   addItem(item: Item): void;
   getItemById(id: number): Item;
   getAllItems(): Array<Item>;
+  getFirst(): Item;
+  getLast(): Item;
 }
