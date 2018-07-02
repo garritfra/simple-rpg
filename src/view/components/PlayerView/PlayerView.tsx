@@ -21,6 +21,7 @@ export default class PlayerView extends React.Component<
   render() {
     return (
       <div>
+        <img src={this.player.getAvatar()} />
         <h1>{this.props.player.getName()}</h1>
         <InventoryView inventory={this.player.getInventory()} />
       </div>
