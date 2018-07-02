@@ -1,16 +1,7 @@
 import * as React from "react";
-import {
-  Container,
-  Button,
-  Card,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  CardText,
-  CardImg,
-  Col,
-  Row
-} from "reactstrap";
+import { Container } from "reactstrap";
+import PlayerView from "./components/PlayerView/PlayerView";
+import Game from "../game/Game";
 
 export default class App extends React.Component<any, any> {
   constructor(props: any) {
@@ -20,6 +11,10 @@ export default class App extends React.Component<any, any> {
 
   handleAttack() {}
   render() {
-    return <Container />;
+    return (
+      <Container>
+        <PlayerView player={Game.getInstance().getPlayer()} />
+      </Container>
+    );
   }
 }
