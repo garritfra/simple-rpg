@@ -11,17 +11,17 @@ export default class Item implements IItem {
     this.strength = strength;
   }
 
-  getName(): string {
-    throw new Error("Method not implemented.");
+  public getName(): string {
+    return this.name;
   }
-  getStrength(): number {
-    throw new Error("Method not implemented.");
+  public getStrength(): number {
+    return this.strength;
   }
 
-  setId(id: number): void {
-    throw new Error("Method not implemented.");
+  public setId(id: number): void {
+    this.id = id;
   }
-  getId(): number {
-    throw new Error("Method not implemented.");
+  public getId(): number {
+    return this.id;
   }
 }

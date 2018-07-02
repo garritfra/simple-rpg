@@ -8,13 +8,18 @@ export default class Inventory implements IInventory {
     this.inventory = [];
   }
 
-  addItem(): void {
-    throw new Error("Method not implemented.");
+  addItem(item: Item): void {
+    this.inventory.push(item);
   }
   getItemById(id: number): Item {
-    throw new Error("Method not implemented.");
+    for (const item of this.inventory) {
+      if (item.getId() == id) {
+        return item;
+      }
+    }
+    return null;
   }
   getAllItems(): Item[] {
-    throw new Error("Method not implemented.");
+    return this.inventory;
   }
 }
