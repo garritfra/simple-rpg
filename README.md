@@ -1,7 +1,10 @@
 [![codecov](https://codecov.io/gh/garritfra/simple-rpg/branch/master/graph/badge.svg)](https://codecov.io/gh/garritfra/simple-rpg)
 
-## Feature Order
+## Roadmap
 
-1.  Inventory System
-2.  Item Generator
-3.  Player Stats
+1. Inventory System
+  - Equipable items
+  - Generated Items
+1. Game World
+  - Creature Encounters
+  - Combat
