@@ -8,3 +8,10 @@
 1. Game World
     1. Creature Encounters
     1. Combat
+
+## Proposals
+
+- Game Saves
+- Spells
+- Economy
+    - Markets
