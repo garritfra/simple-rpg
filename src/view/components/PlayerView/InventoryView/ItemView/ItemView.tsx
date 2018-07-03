@@ -35,7 +35,7 @@ export default class ItemView extends React.Component<
             </ListGroupItemText>
           </Col>
           <Col>
-            <Button color="primary">Equip</Button>
+            <Button color="primary">Equip</Button>{" "}
             <Button color="danger">Remove</Button>
           </Col>
         </Row>

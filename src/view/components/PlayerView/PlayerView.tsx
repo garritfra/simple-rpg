@@ -21,14 +21,12 @@ export default class PlayerView extends React.Component<
   render() {
     return (
       <Row>
-        <Col xs="6">
+        <Col>
           <Jumbotron>
             <img src={this.player.getAvatar()} />
             <h1>{this.props.player.getName()}</h1>
+            <InventoryView inventory={this.player.getInventory()} />
           </Jumbotron>
-        </Col>
-        <Col xs="6">
-          <InventoryView inventory={this.player.getInventory()} />
         </Col>
       </Row>
     );
