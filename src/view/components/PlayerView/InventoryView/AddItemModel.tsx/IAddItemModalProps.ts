@@ -1,4 +1,4 @@
 export default interface IAddItemModalProps {
-  visible: boolean;
-  close: any;
+  isOpen: boolean;
+  onCloseCallback: () => void;
 }

@@ -33,8 +33,8 @@ export default class InventoryView extends React.Component<
   render() {
     const itemViews = (
       <ListGroup>
-        {this.state.items.map((item: Item) => {
-          return <ItemView item={item} />;
+        {this.state.items.map((item: Item, i) => {
+          return <ItemView item={item} key={i} />;
         })}
       </ListGroup>
     );
@@ -43,8 +43,8 @@ export default class InventoryView extends React.Component<
       <div>
         <h2>Inventory</h2>
         <AddItemModal
-          visible={this.state.addItemModalVisible}
-          close={this.closeAddItemModal.bind(this)}
+          isOpen={this.state.addItemModalVisible}
+          onCloseCallback={this.closeAddItemModal.bind(this)}
         />
         <Button onClick={this.openAddItemModal.bind(this)}>Add Item</Button>
         <div>{itemViews}</div>

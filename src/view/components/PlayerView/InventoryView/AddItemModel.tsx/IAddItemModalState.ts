@@ -1,3 +1,5 @@
+import Item from "../../../../../game/model/implementation/Item";
+
 export default interface IAddItemModalState {
-  isOpen: boolean;
+  item: Item;
 }

@@ -14,8 +14,16 @@ export default class Item implements IItem {
   public getName(): string {
     return this.name;
   }
+
+  public setName(name: string) {
+    this.name = name;
+  }
   public getStrength(): number {
     return this.strength;
+  }
+
+  public setStrength(strength: number) {
+    this.strength = strength;
   }
 
   public setId(id: number): void {

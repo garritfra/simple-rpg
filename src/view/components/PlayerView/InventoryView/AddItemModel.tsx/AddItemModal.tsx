@@ -11,6 +11,8 @@ import {
   Input,
   Form
 } from "reactstrap";
+import Item from "../../../../../game/model/implementation/Item";
+import Game from "../../../../../game/Game";
 
 export default class AddItemModal extends React.Component<
   IAddItemModalProps,
@@ -21,36 +23,43 @@ export default class AddItemModal extends React.Component<
   constructor(props: IAddItemModalProps) {
     super(props);
     this.props = props;
-    this.state = {
-      isOpen: false
-    };
+    this.state = { item: new Item("", 0) };
   }
 
-  handleClose(): void {
-    this.props.close();
-  }
-
-  submit(event: Event): void {
-    this.handleClose();
+  handleSubmit(): void {
+    console.log(this.state.item);
+    Game.getInstance()
+      .getPlayer()
+      .getInventory()
+      .addItem(this.state.item);
+    this.props.onCloseCallback();
   }
 
   render() {
     return (
-      <Modal isOpen={this.props.visible}>
+      <Modal isOpen={this.props.isOpen}>
         <ModalHeader>Add Item</ModalHeader>
         <ModalBody>
-          <Form onSubmit={this.submit.bind(this)}>
+          <Form onSubmit={this.handleSubmit.bind(this)}>
             <FormGroup>
               <Label for="name">Name</Label>
-              <Input type="text" id="name" />
+              <Input
+                type="text"
+                id="name"
+                onChange={e => this.state.item.setName(e.target.value)}
+              />
             </FormGroup>
             <FormGroup>
               <Label for="strength">Strength</Label>
-              <Input type="number" id="strength" />
+              <Input
+                type="number"
+                id="strength"
+                onChange={e =>
+                  this.state.item.setStrength(parseInt(e.target.value))
+                }
+              />
             </FormGroup>
-            <Button type="submit" onClick={this.submit.bind(this)}>
-              Add
-            </Button>
+            <Button type="submit">Add</Button>
           </Form>
         </ModalBody>
       </Modal>
