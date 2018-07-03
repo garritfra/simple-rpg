@@ -3,8 +3,8 @@
 ## Roadmap
 
 1. Inventory System
-  - Equipable items
-  - Generated Items
+    1. Equipable items
+    1. Generated Items
 1. Game World
-  - Creature Encounters
-  - Combat
+    1. Creature Encounters
+    1. Combat
