@@ -14,4 +14,4 @@
 - Game Saves
 - Spells
 - Economy
-    - Markets
+    - Shop
