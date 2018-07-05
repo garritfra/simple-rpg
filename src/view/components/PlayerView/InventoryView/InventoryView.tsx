@@ -32,7 +32,7 @@ export default class InventoryView extends React.Component<
 
   render() {
     const itemViews = (
-      <ListGroup>
+      <ListGroup style={{ marginTop: "10px" }}>
         {this.state.items.map((item: Item, i) => {
           return <ItemView item={item} key={i} />;
         })}
