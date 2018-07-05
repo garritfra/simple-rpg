@@ -59,7 +59,7 @@ export default class AddItemModal extends React.Component<
                 }
               />
             </FormGroup>
-            <Button type="submit">Add</Button>
+            <Button onClick={this.handleSubmit.bind(this)}>Add</Button>
           </Form>
         </ModalBody>
       </Modal>
