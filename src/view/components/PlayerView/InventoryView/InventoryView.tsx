@@ -5,7 +5,7 @@ import ItemView from "./ItemView/ItemView";
 import Item from "../../../../game/model/implementation/Item";
 
 import { Container, ListGroup, Button, Jumbotron, Row, Col } from "reactstrap";
-import AddItemModal from "./AddItemModel.tsx/AddItemModal";
+import AddItemModal from "./AddItemModal/AddItemModal";
 import Game from "../../../../game/Game";
 
 export default class InventoryView extends React.Component<
