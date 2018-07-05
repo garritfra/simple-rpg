@@ -9,6 +9,7 @@ export default class Inventory implements IInventory {
   }
 
   addItem(item: Item): void {
+    item.setId(this.inventory.length - 1);
     this.inventory.push(item);
   }
   getItemById(id: number): Item {
@@ -19,7 +20,7 @@ export default class Inventory implements IInventory {
     }
     return null;
   }
-  getAllItems(): Item[] {
+  getAllItems(): Array<Item> {
     return this.inventory;
   }
 
