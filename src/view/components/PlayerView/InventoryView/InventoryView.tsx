@@ -4,7 +4,7 @@ import IInventoryViewState from "./IInventoryViewState";
 import ItemView from "./ItemView/ItemView";
 import Item from "../../../../game/model/implementation/Item";
 
-import { Container, ListGroup, Button, Jumbotron } from "reactstrap";
+import { Container, ListGroup, Button, Jumbotron, Row, Col } from "reactstrap";
 import AddItemModal from "./AddItemModel.tsx/AddItemModal";
 
 export default class InventoryView extends React.Component<
@@ -41,12 +41,16 @@ export default class InventoryView extends React.Component<
 
     return (
       <div>
-        <h2>Inventory</h2>
         <AddItemModal
           isOpen={this.state.addItemModalVisible}
           onCloseCallback={this.closeAddItemModal.bind(this)}
         />
-        <Button onClick={this.openAddItemModal.bind(this)}>Add Item</Button>
+        <Col>
+          <Row style={{ justifyContent: "space-between" }}>
+            <h2>Inventory</h2>
+            <Button onClick={this.openAddItemModal.bind(this)}>Add Item</Button>
+          </Row>
+        </Col>
         <div>{itemViews}</div>
       </div>
     );
