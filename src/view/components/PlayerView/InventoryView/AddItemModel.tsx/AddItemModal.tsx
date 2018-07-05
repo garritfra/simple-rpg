@@ -27,12 +27,24 @@ export default class AddItemModal extends React.Component<
   }
 
   handleSubmit(): void {
-    console.log(this.state.item);
+    this.addToInventory(this.state.item);
+    this.resetTemporaryItem();
+    this.props.onCloseCallback();
+  }
+
+  private resetTemporaryItem() {
+    this.setState({ item: new Item("", 0) });
+  }
+
+  private addToInventory(item: Item) {
     Game.getInstance()
       .getPlayer()
       .getInventory()
-      .addItem(this.state.item);
-    this.props.onCloseCallback();
+      .addItem(item);
+  }
+
+  handleNameChange(e: any) {
+    this.state.item.setName(e.target.value);
   }
 
   render() {
@@ -40,7 +52,7 @@ export default class AddItemModal extends React.Component<
       <Modal isOpen={this.props.isOpen}>
         <ModalHeader>Add Item</ModalHeader>
         <ModalBody>
-          <Form onSubmit={this.handleSubmit.bind(this)}>
+          <Form>
             <FormGroup>
               <Label for="name">Name</Label>
               <Input
