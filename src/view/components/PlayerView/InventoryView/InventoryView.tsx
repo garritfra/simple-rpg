@@ -6,6 +6,7 @@ import Item from "../../../../game/model/implementation/Item";
 
 import { Container, ListGroup, Button, Jumbotron, Row, Col } from "reactstrap";
 import AddItemModal from "./AddItemModel.tsx/AddItemModal";
+import Game from "../../../../game/Game";
 
 export default class InventoryView extends React.Component<
   IInventoryViewProps,
@@ -30,11 +31,25 @@ export default class InventoryView extends React.Component<
     this.setState({ addItemModalVisible: false });
   }
 
+  handleRemove(item: Item) {
+    Game.getInstance()
+      .getPlayer()
+      .getInventory()
+      .removeItem(item);
+    this.forceUpdate();
+  }
+
   render() {
     const itemViews = (
       <ListGroup style={{ marginTop: "10px" }}>
         {this.state.items.map((item: Item, i) => {
-          return <ItemView item={item} key={i} />;
+          return (
+            <ItemView
+              handleRemove={this.handleRemove.bind(this)}
+              item={item}
+              key={i}
+            />
+          );
         })}
       </ListGroup>
     );

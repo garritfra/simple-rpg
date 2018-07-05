@@ -3,22 +3,30 @@ import Item from "./Item";
 
 export default class Inventory implements IInventory {
   private inventory: Array<Item>;
+  private nextId: number;
 
   constructor() {
     this.inventory = [];
+    this.nextId = -1;
   }
 
   addItem(item: Item): void {
-    item.setId(this.inventory.length - 1);
+    item.setId(this.allocateId());
     this.inventory.push(item);
+    console.log(this.nextId);
   }
+
+  allocateId(): number {
+    return ++this.nextId;
+  }
+
+  removeItem(item: Item): void {
+    const index = this.inventory.indexOf(item);
+    delete this.inventory[index];
+  }
+
   getItemById(id: number): Item {
-    for (const item of this.inventory) {
-      if (item.getId() == id) {
-        return item;
-      }
-    }
-    return null;
+    return this.inventory[id];
   }
   getAllItems(): Array<Item> {
     return this.inventory;
