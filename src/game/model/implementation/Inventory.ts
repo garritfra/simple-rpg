@@ -25,19 +25,19 @@ export default class Inventory implements IInventory {
     });
   }
 
-  getItemById(id: number): Item {
+  public getItemById(id: number): Item {
     return this.inventory.filter((item: Item) => {
       return item.getId() === id;
     })[0];
   }
-  getAllItems(): Array<Item> {
+  public getAllItems(): Array<Item> {
     return this.inventory;
   }
 
-  getFirst(): Item {
+  public getFirst(): Item {
     return this.inventory[0];
   }
-  getLast(): Item {
+  public getLast(): Item {
     return this.inventory[this.inventory.length - 1];
   }
 }
