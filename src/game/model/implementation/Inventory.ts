@@ -13,20 +13,22 @@ export default class Inventory implements IInventory {
   addItem(item: Item): void {
     item.setId(this.allocateId());
     this.inventory.push(item);
-    console.log(this.nextId);
   }
 
-  allocateId(): number {
+  private allocateId(): number {
     return ++this.nextId;
   }
 
-  removeItem(item: Item): void {
-    const index = this.inventory.indexOf(item);
-    delete this.inventory[index];
+  public removeItem(item: Item): void {
+    this.inventory = this.inventory.filter((invItem: Item) => {
+      return item !== invItem;
+    });
   }
 
   getItemById(id: number): Item {
-    return this.inventory[id];
+    return this.inventory.filter((item: Item) => {
+      return item.getId() === id;
+    })[0];
   }
   getAllItems(): Array<Item> {
     return this.inventory;
