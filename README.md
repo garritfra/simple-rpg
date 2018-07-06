@@ -15,6 +15,8 @@
 ## Proposals
 
 - Game Saves
+- Quests
 - Spells
 - Economy
     - Shop
+
