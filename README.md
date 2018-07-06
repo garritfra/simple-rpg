@@ -3,6 +3,7 @@
 ## Roadmap
 
 1. Inventory System
+    1. Create Items in Inventory✅
     1. Equipable items
     1. Generated Items
 1. Game World
