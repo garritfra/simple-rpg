@@ -3,8 +3,7 @@ import IPlayerViewProps from "./IPlayerViewProps";
 import IPlayerViewState from "./IPlayerViewState";
 import Player from "../../../game/model/implementation/Player";
 import { Container, Jumbotron, Col, Row, Button } from "reactstrap";
-import InventoryView from "./InventoryModal/InventoryView/InventoryView";
-import InventoryModal from "./InventoryModal/InventoryModal";
+import PlayerTabView from "./PlayerTabView/PlayerTabView";
 
 export default class PlayerView extends React.Component<
   IPlayerViewProps,
@@ -31,14 +30,7 @@ export default class PlayerView extends React.Component<
           <Jumbotron>
             <img src={this.player.getAvatar()} />
             <h1>{this.props.player.getName()}</h1>
-            <InventoryModal
-              onToggleCallback={this.toggleInventoryModal.bind(this)}
-              isOpen={this.state.inventoryModalIsOpen}
-              inventory={this.player.getInventory()}
-            />
-            <Button onClick={this.toggleInventoryModal.bind(this)}>
-              Inventory
-            </Button>
+            <PlayerTabView player={this.props.player} />
           </Jumbotron>
         </Col>
       </Row>
