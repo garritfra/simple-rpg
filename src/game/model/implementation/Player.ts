@@ -6,11 +6,16 @@ export default class Player extends Creature implements IPlayer {
   private avatar: string;
   private inventory: Inventory;
 
-  constructor() {
-    super("Player");
+  constructor(name?: string) {
+    if (name) {
+      super(name);
+    } else {
+      super("Player");
+    }
     this.avatar = "https://api.adorable.io/avatars/150/" + this.getName();
     this.inventory = new Inventory();
   }
+
   public getAvatar(): string {
     return this.avatar;
   }

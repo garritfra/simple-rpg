@@ -8,7 +8,7 @@
     "build": "webpack --mode production",
     "deploy": "npm run build && gh-pages -d /docs",
     "test": "jest -c jest.config.json --coverage",
-    "watch": "jest --watch --coverage"
+    "test:watch": "jest -c jest.config.json --coverage --watch"
   },
   "repository": {
     "type": "git",
