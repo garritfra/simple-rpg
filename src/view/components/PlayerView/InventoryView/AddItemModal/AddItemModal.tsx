@@ -23,7 +23,10 @@ export default class AddItemModal extends React.Component<
   constructor(props: IAddItemModalProps) {
     super(props);
     this.props = props;
-    this.state = { item: new Item("", 0) };
+  }
+
+  componentDidMount() {
+    this.resetTemporaryItem();
   }
 
   handleSubmit(): void {
@@ -33,7 +36,7 @@ export default class AddItemModal extends React.Component<
   }
 
   private resetTemporaryItem() {
-    this.setState({ item: new Item("", 0) });
+    this.setState({ item: new Item("No Name", 0) });
   }
 
   private addToInventory(item: Item) {

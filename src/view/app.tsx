@@ -15,7 +15,11 @@ export default class App extends React.Component<any, any> {
   render() {
     return (
       <Container>
-        <PlayerView player={this.state.game.getPlayer()} />
+        <Row>
+          <Col>
+            <PlayerView player={this.state.game.getPlayer()} />
+          </Col>
+        </Row>
       </Container>
     );
   }

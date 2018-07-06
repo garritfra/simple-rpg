@@ -1,14 +1,7 @@
 import * as React from "react";
 import IItemViewProps from "./IItemViewProps";
 import IItemViewState from "./IItemViewState";
-import {
-  ListGroupItem,
-  ListGroupItemHeading,
-  ListGroupItemText,
-  Row,
-  Col,
-  Button
-} from "reactstrap";
+import { Button, Card, CardBody, CardTitle, CardText } from "reactstrap";
 import Game from "../../../../../game/Game";
 
 export default class ItemView extends React.Component<
@@ -29,24 +22,15 @@ export default class ItemView extends React.Component<
 
   render() {
     return (
-      <ListGroupItem>
-        <Row>
-          <Col>
-            <ListGroupItemHeading>
-              {this.props.item.getName()}
-            </ListGroupItemHeading>
-            <ListGroupItemText>
-              Strength: {this.props.item.getStrength()}
-            </ListGroupItemText>
-          </Col>
-          <Col>
-            <Button color="primary">Equip</Button>{" "}
-            <Button onClick={this.handleRemove.bind(this)} color="danger">
-              Remove
-            </Button>
-          </Col>
-        </Row>
-      </ListGroupItem>
+      <Card>
+        <CardBody autoCorrect="true">
+          <CardTitle>{this.props.item.getName()}</CardTitle>
+          <CardText>Strength: {this.props.item.getStrength()}</CardText>
+          <Button onClick={this.handleRemove.bind(this)} color="danger">
+            Remove
+          </Button>
+        </CardBody>
+      </Card>
     );
   }
 }

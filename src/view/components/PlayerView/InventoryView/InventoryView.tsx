@@ -4,7 +4,19 @@ import IInventoryViewState from "./IInventoryViewState";
 import ItemView from "./ItemView/ItemView";
 import Item from "../../../../game/model/implementation/Item";
 
-import { Container, ListGroup, Button, Jumbotron, Row, Col } from "reactstrap";
+import {
+  Container,
+  ListGroup,
+  Button,
+  Jumbotron,
+  Row,
+  Col,
+  CardDeck,
+  CardColumns,
+  Card,
+  CardTitle,
+  CardBody
+} from "reactstrap";
 import AddItemModal from "./AddItemModal/AddItemModal";
 import Game from "../../../../game/Game";
 
@@ -41,7 +53,7 @@ export default class InventoryView extends React.Component<
 
   render() {
     const itemViews = (
-      <ListGroup style={{ marginTop: "10px" }}>
+      <CardColumns style={{ marginTop: "10px" }}>
         {this.state.items.map((item: Item, i) => {
           return (
             <ItemView
@@ -51,23 +63,21 @@ export default class InventoryView extends React.Component<
             />
           );
         })}
-      </ListGroup>
+      </CardColumns>
     );
 
     return (
-      <div>
+      <Card>
         <AddItemModal
           isOpen={this.state.addItemModalVisible}
           onCloseCallback={this.closeAddItemModal.bind(this)}
         />
-        <Col>
-          <Row style={{ justifyContent: "space-between" }}>
-            <h2>Inventory</h2>
-            <Button onClick={this.openAddItemModal.bind(this)}>Add Item</Button>
-          </Row>
-        </Col>
-        <div>{itemViews}</div>
-      </div>
+        <CardBody>
+          <CardTitle>Inventory</CardTitle>
+          <Button onClick={this.openAddItemModal.bind(this)}>Add Item</Button>
+          <div>{itemViews}</div>
+        </CardBody>
+      </Card>
     );
   }
 }
