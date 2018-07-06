@@ -32,7 +32,7 @@ export default class AddItemModal extends React.Component<
   handleSubmit(): void {
     this.addToInventory(this.state.item);
     this.resetTemporaryItem();
-    this.props.onCloseCallback();
+    this.props.onToggle();
   }
 
   private resetTemporaryItem() {
@@ -52,7 +52,7 @@ export default class AddItemModal extends React.Component<
 
   render() {
     return (
-      <Modal isOpen={this.props.isOpen}>
+      <Modal toggle={this.props.onToggle.bind(this)} isOpen={this.props.isOpen}>
         <ModalHeader>Add Item</ModalHeader>
         <ModalBody>
           <Form>

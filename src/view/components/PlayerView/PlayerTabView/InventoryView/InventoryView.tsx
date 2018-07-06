@@ -35,12 +35,9 @@ export default class InventoryView extends React.Component<
     };
   }
 
-  openAddItemModal() {
-    this.setState({ addItemModalVisible: true });
-  }
-
-  closeAddItemModal() {
-    this.setState({ addItemModalVisible: false });
+  toggleAddItemModal() {
+    this.setState({ addItemModalVisible: !this.state.addItemModalVisible });
+    console.log(this.state.addItemModalVisible);
   }
 
   handleRemove(item: Item) {
@@ -70,11 +67,11 @@ export default class InventoryView extends React.Component<
       <Card>
         <AddItemModal
           isOpen={this.state.addItemModalVisible}
-          onCloseCallback={this.closeAddItemModal.bind(this)}
+          onToggle={this.toggleAddItemModal.bind(this)}
         />
         <CardBody>
           <CardTitle>Inventory</CardTitle>
-          <Button onClick={this.openAddItemModal.bind(this)}>Add Item</Button>
+          <Button onClick={this.toggleAddItemModal.bind(this)}>Add Item</Button>
           <div>{itemViews}</div>
         </CardBody>
       </Card>

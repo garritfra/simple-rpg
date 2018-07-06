@@ -55,7 +55,7 @@ export default class PlayerTabView extends React.Component<
           <TabPane tabId="inventory">
             <InventoryView inventory={this.props.player.getInventory()} />
           </TabPane>
-          <TabPane tabId="stats">Here are the stats!</TabPane>
+          <TabPane tabId="stats">Stats will go here!</TabPane>
         </TabContent>
       </div>
     );
