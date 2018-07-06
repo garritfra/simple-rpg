@@ -3,6 +3,7 @@
   "transform": {
     "^.+\\.tsx?$": "ts-jest"
   },
+  "collectCoverageFrom": ["**/*.ts"],
   "testRegex": "(/test/.*|(\\.|/)(test|spec))\\.tsx?$",
   "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
 }

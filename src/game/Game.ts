@@ -5,7 +5,7 @@ let instance: Game;
 
 export default class Game {
   private player: Player;
-  constructor() {
+  private constructor() {
     this.player = new Player();
   }
 
