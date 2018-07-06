@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8d077ab9da774952a55ad536c126417a)](https://app.codacy.com/app/garritfra/simple-rpg?utm_source=github.com&utm_medium=referral&utm_content=garritfra/simple-rpg&utm_campaign=badger)
 # Simple RPG Game [![Build Status](https://travis-ci.org/garritfra/simple-rpg.svg?branch=develop)](https://travis-ci.org/garritfra/simple-rpg) [![codecov](https://codecov.io/gh/garritfra/simple-rpg/branch/develop/graph/badge.svg)](https://codecov.io/gh/garritfra/simple-rpg) [![Waffle.io - Columns and their card count](https://badge.waffle.io/garritfra/simple-rpg.svg?columns=all)](https://waffle.io/garritfra/simple-rpg)
 
 [![BCH compliance](https://bettercodehub.com/edge/badge/garritfra/simple-rpg?branch=develop)](https://bettercodehub.com/)
