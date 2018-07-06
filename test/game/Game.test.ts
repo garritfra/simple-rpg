@@ -8,4 +8,12 @@ describe("Game", () => {
       expect(game1).toBe(game2);
     });
   });
+
+  describe("getPlayer", () => {
+    it("gets the player that is assigned to the game", () => {
+      const game = Game.getInstance();
+      const player = game.getPlayer();
+      expect(player).toBe(Game.getInstance().getPlayer());
+    });
+  });
 });
