@@ -1,8 +1,4 @@
 import * as React from "react";
-import IInventoryViewProps from "./IInventoryViewProps";
-import IInventoryViewState from "./IInventoryViewState";
-import ItemView from "./ItemView/ItemView";
-import Item from "../../../../game/model/implementation/Item";
 
 import {
   Container,
@@ -17,8 +13,12 @@ import {
   CardTitle,
   CardBody
 } from "reactstrap";
+import IInventoryViewProps from "./IInventoryViewProps";
+import IInventoryViewState from "./IInventoryViewState";
+import Item from "../../../../../game/model/implementation/Item";
+import Game from "../../../../../game/Game";
+import ItemView from "./ItemView/ItemView";
 import AddItemModal from "./AddItemModal/AddItemModal";
-import Game from "../../../../game/Game";
 
 export default class InventoryView extends React.Component<
   IInventoryViewProps,

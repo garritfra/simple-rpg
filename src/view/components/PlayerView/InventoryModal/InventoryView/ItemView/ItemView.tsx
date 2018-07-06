@@ -2,7 +2,6 @@ import * as React from "react";
 import IItemViewProps from "./IItemViewProps";
 import IItemViewState from "./IItemViewState";
 import { Button, Card, CardBody, CardTitle, CardText } from "reactstrap";
-import Game from "../../../../../game/Game";
 
 export default class ItemView extends React.Component<
   IItemViewProps,

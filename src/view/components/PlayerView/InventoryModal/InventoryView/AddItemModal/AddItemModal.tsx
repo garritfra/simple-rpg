@@ -11,8 +11,8 @@ import {
   Input,
   Form
 } from "reactstrap";
-import Item from "../../../../../game/model/implementation/Item";
-import Game from "../../../../../game/Game";
+import Item from "../../../../../../game/model/implementation/Item";
+import Game from "../../../../../../game/Game";
 
 export default class AddItemModal extends React.Component<
   IAddItemModalProps,

@@ -2,8 +2,9 @@ import * as React from "react";
 import IPlayerViewProps from "./IPlayerViewProps";
 import IPlayerViewState from "./IPlayerViewState";
 import Player from "../../../game/model/implementation/Player";
-import { Container, Jumbotron, Col, Row } from "reactstrap";
-import InventoryView from "./InventoryView/InventoryView";
+import { Container, Jumbotron, Col, Row, Button } from "reactstrap";
+import InventoryView from "./InventoryModal/InventoryView/InventoryView";
+import InventoryModal from "./InventoryModal/InventoryModal";
 
 export default class PlayerView extends React.Component<
   IPlayerViewProps,
@@ -16,6 +17,11 @@ export default class PlayerView extends React.Component<
     super(props);
     this.props = props;
     this.player = this.props.player;
+    this.state = { inventoryModalIsOpen: false };
+  }
+
+  toggleInventoryModal() {
+    this.setState({ inventoryModalIsOpen: !this.state.inventoryModalIsOpen });
   }
 
   render() {
@@ -25,7 +31,14 @@ export default class PlayerView extends React.Component<
           <Jumbotron>
             <img src={this.player.getAvatar()} />
             <h1>{this.props.player.getName()}</h1>
-            <InventoryView inventory={this.player.getInventory()} />
+            <InventoryModal
+              onToggleCallback={this.toggleInventoryModal.bind(this)}
+              isOpen={this.state.inventoryModalIsOpen}
+              inventory={this.player.getInventory()}
+            />
+            <Button onClick={this.toggleInventoryModal.bind(this)}>
+              Inventory
+            </Button>
           </Jumbotron>
         </Col>
       </Row>
