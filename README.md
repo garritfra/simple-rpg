@@ -1,6 +1,6 @@
 # Simple RPG Game [![Build Status](https://travis-ci.org/garritfra/simple-rpg.svg?branch=develop)](https://travis-ci.org/garritfra/simple-rpg) [![codecov](https://codecov.io/gh/garritfra/simple-rpg/branch/develop/graph/badge.svg)](https://codecov.io/gh/garritfra/simple-rpg) [![Waffle.io - Columns and their card count](https://badge.waffle.io/garritfra/simple-rpg.svg?columns=all)](https://waffle.io/garritfra/simple-rpg)
 
-[![BCH compliance](https://bettercodehub.com/edge/badge/garritfra/simple-rpg?branch=develop)](https://bettercodehub.com/)
+[![BCH compliance](https://bettercodehub.com/edge/badge/garritfra/simple-rpg?branch=develop)](https://bettercodehub.com/) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/de118d547c224c2daf358d596c245ce4)](https://www.codacy.com/app/garritfra/simple-rpg?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=garritfra/simple-rpg&amp;utm_campaign=Badge_Grade)
 
 ## Roadmap
 
