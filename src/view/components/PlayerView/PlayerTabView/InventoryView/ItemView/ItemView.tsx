@@ -16,6 +16,7 @@ export default class ItemView extends React.Component<
   }
 
   handleRemove() {
+    console.log(this);
     this.props.handleRemove(this.props.item);
   }
 

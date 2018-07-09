@@ -19,6 +19,7 @@ import Item from "../../../../../game/model/implementation/Item";
 import Game from "../../../../../game/Game";
 import ItemView from "./ItemView/ItemView";
 import AddItemModal from "./AddItemModal/AddItemModal";
+import ItemGenerator from "../../../../../game/util/ItemGenerator";
 
 export default class InventoryView extends React.Component<
   IInventoryViewProps,
@@ -37,14 +38,19 @@ export default class InventoryView extends React.Component<
 
   toggleAddItemModal() {
     this.setState({ addItemModalVisible: !this.state.addItemModalVisible });
-    console.log(this.state.addItemModalVisible);
   }
 
   handleRemove(item: Item) {
-    Game.getInstance()
-      .getPlayer()
-      .getInventory()
-      .removeItem(item);
+    this.props.inventory.removeItem(item);
+    this.setState({ items: null });
+    this.setState({ items: this.props.inventory.getAllItems() });
+    this.forceUpdate();
+  }
+
+  generateItem() {
+    const item = new ItemGenerator().generateItem();
+    this.props.inventory.addItem(item);
+
     this.forceUpdate();
   }
 
@@ -71,7 +77,10 @@ export default class InventoryView extends React.Component<
         />
         <CardBody>
           <CardTitle>Inventory</CardTitle>
-          <Button onClick={this.toggleAddItemModal.bind(this)}>Add Item</Button>
+          <Button onClick={this.toggleAddItemModal.bind(this)}>
+            Add Item
+          </Button>{" "}
+          <Button onClick={this.generateItem.bind(this)}>Generate Item</Button>
           <div>{itemViews}</div>
         </CardBody>
       </Card>
