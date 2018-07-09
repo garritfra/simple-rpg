@@ -44,7 +44,6 @@ export default class InventoryView extends React.Component<
     this.props.inventory.removeItem(item);
     this.setState({ items: null });
     this.setState({ items: this.props.inventory.getAllItems() });
-    this.forceUpdate();
   }
 
   generateItem() {
