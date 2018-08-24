@@ -3,10 +3,10 @@ import * as React from "react";
 import { Button, CardColumns, Card, CardTitle, CardBody } from "reactstrap";
 import IInventoryViewProps from "./IInventoryViewProps";
 import IInventoryViewState from "./IInventoryViewState";
-import Item from "../../../../../game/model/implementation/Item";
 import ItemView from "./ItemView/ItemView";
 import AddItemModal from "./AddItemModal/AddItemModal";
-import ItemGenerator from "../../../../../game/util/ItemGenerator";
+import Item from "../../../../../../game/model/implementation/Item";
+import ItemGenerator from "../../../../../../game/util/ItemGenerator";
 
 export default class InventoryView extends React.Component<
   IInventoryViewProps,

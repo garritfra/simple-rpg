@@ -1,4 +1,4 @@
-import Inventory from "../../../../game/model/implementation/Inventory";
+import Inventory from "../../../../../game/model/implementation/Inventory";
 
 export default interface IInventoryModalProps {
   inventory: Inventory;

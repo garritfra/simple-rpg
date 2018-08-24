@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Container, Col, Row } from "reactstrap";
-import PlayerView from "./components/PlayerView/PlayerView";
+import PlayerView from "./components/GameView/PlayerView/PlayerView";
 import Game from "../game/Game";
 
 export default class App extends React.Component<any, any> {
