@@ -2,7 +2,15 @@ import * as React from "react";
 import Game from "../../../game/Game";
 import PlayerView from "./PlayerView/PlayerView";
 
-export default class GameView extends React.Component<any, any> {
+interface IGameViewProps {
+  game: Game;
+}
+interface IGameViewState {}
+
+export default class GameView extends React.Component<
+  IGameViewProps,
+  IGameViewState
+> {
   constructor(props: any) {
     super(props);
   }
