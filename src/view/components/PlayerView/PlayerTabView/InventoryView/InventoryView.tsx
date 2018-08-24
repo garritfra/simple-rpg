@@ -1,22 +1,9 @@
 import * as React from "react";
 
-import {
-  Container,
-  ListGroup,
-  Button,
-  Jumbotron,
-  Row,
-  Col,
-  CardDeck,
-  CardColumns,
-  Card,
-  CardTitle,
-  CardBody
-} from "reactstrap";
+import { Button, CardColumns, Card, CardTitle, CardBody } from "reactstrap";
 import IInventoryViewProps from "./IInventoryViewProps";
 import IInventoryViewState from "./IInventoryViewState";
 import Item from "../../../../../game/model/implementation/Item";
-import Game from "../../../../../game/Game";
 import ItemView from "./ItemView/ItemView";
 import AddItemModal from "./AddItemModal/AddItemModal";
 import ItemGenerator from "../../../../../game/util/ItemGenerator";
