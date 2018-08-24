@@ -1,9 +1,15 @@
 import * as React from "react";
-import IPlayerViewProps from "./IPlayerViewProps";
-import IPlayerViewState from "./IPlayerViewState";
 import { Jumbotron, Col, Row } from "reactstrap";
 import PlayerTabView from "./PlayerTabView/PlayerTabView";
 import Player from "../../../../game/model/implementation/Player";
+
+interface IPlayerViewProps {
+  player: Player;
+}
+
+interface IPlayerViewState {
+  inventoryModalIsOpen: boolean;
+}
 
 export default class PlayerView extends React.Component<
   IPlayerViewProps,
