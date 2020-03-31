@@ -54,7 +54,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "reactstrap": "^6.2.0",
-    "ts-jest": "^23.0.0",
+    "ts-jest": "^25.3.0",
     "webpack-cli": "^3.0.8",
     "snyk": "^1.88.1"
   },
